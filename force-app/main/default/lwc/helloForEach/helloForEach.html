@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title = "HelloForEach">
+        <ul class = "slds-var-m-around_medium">
+            <template for:each={Contacts} for:item="contact">
+                <li key={contact.id}>
+                    <div if:true={it.first} class="list-first"></div>
+                    {contact.Name},{contact.Title}
+                    <div if:true={it.last} class="list-last"></div>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
