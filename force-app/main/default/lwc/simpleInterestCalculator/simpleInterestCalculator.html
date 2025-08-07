@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title = "Interest Calculator" icon-name = "standard:money">
+        <div class = "slds-var-m-around_medium">
+            <lightning-input label = "Principal Amount" value = {principal} onchange = {handlePrincipalChange}></lightning-input>
+            <lightning-input label = "Rate of Interest" value = {rate} onchange = {handleRateChange}></lightning-input>
+            <lightning-input label = "Time (in years)" value = {time} onchange = {handleTimeChange}></lightning-input>
+            <lightning-button variant = "brand" label = "Calculate" onclick = {calculateInterest}></lightning-button>
+        </div>
+        <template if:true={interest}>
+            <div class="slds-var-m-around_medium">
+                <p class="slds-text-heading_medium">Calculated Interest: ${interest}</p>
+            </div>
+        </template>
+        <lightning-formatted-text class="slds-var-m-around_medium">
+            <p>Simple Interest is calculated using the formula: <strong>SI = (Principal * Rate * Time) / 100</strong></p>
+        </lightning-formatted-text>
+    </lightning-card>
+</template>
