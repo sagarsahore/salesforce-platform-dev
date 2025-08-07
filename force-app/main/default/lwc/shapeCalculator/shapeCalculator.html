@@ -1,0 +1,60 @@
+<template>
+    <lightning-card
+        icon-name="utility:calculator"
+        title="Shape Calculator"
+        class="slds-var-m-around_medium">
+        <lightning-layout>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input
+                   type="number"
+                   label="Enter the side of square"
+                   onchange={sideChangeHandler}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input
+                   type="number"
+                   label="Enter the width of the rectangle"
+                   onchange={widthChangeHandler}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input
+                   type="number"
+                   label="Enter the height of the rectangle"
+                   onchange={heightChangeHandler}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input
+                   type="number"
+                   label="Enter the diagonal1 of rombus"
+                   onchange={diagonal1ChangeHandler}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input
+                   type="number"
+                   label="Enter the diagonal2 of rombus"
+                   onchange={diagonal2ChangeHandler}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+               <lightning-button-group>
+                <lightning-button label="Calculate Area" onclick={calculateSqAreaHandler}></lightning-button>
+                <lightning-button label="Rectangle" onclick={calculateRecAreaHandler}></lightning-button>
+                <lightning-button label="Calculate Rombus" onclick={calculateRhAreaHandler}></lightning-button>
+               </lightning-button-group>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-formatted-text value={currentOuput}></lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
