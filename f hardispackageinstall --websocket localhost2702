@@ -1,0 +1,55 @@
+warning: in the working copy of 'force-app/main/default/lwc/bikeCard/bikeCard.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'force-app/main/default/lwc/bikeCard/bikeCard.js-meta.xml', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/force-app/main/default/lwc/bikeCard/bikeCard.html b/force-app/main/default/lwc/bikeCard/bikeCard.html[m
+[1mindex 8252765..80b1099 100644[m
+[1m--- a/force-app/main/default/lwc/bikeCard/bikeCard.html[m
+[1m+++ b/force-app/main/default/lwc/bikeCard/bikeCard.html[m
+[36m@@ -1,10 +1,20 @@[m
+ <template>[m
+[31m-  <div>[m
+[31m-    <div>Name: {name}</div>[m
+[31m-    <div>Description: {description}</div>[m
+[31m-    <lightning-badge label={material}></lightning-badge>[m
+[31m-    <lightning-badge label={category}></lightning-badge>[m
+[31m-    <div>Price: {price}</div>[m
+[31m-    <div><img src={pictureUrl} alt={name}/></div>[m
+[31m-  </div>[m
+[32m+[m[32m  <template lwc:if={product}>[m
+[32m+[m[32m    <div class="container">[m
+[32m+[m[32m      <div class="slds-text-heading_small">{product.fields.Name.value}</div>[m
+[32m+[m[32m      <div class="price">{product.fields.MSRP__c.displayValue}</div>[m
+[32m+[m[32m      <div class="description">{product.fields.Description__c.value}</div>[m
+[32m+[m[32m      <img class="product-img" src={product.fields.Picture_URL__c.value} alt={product.fields.Name.value}/>[m
+[32m+[m[32m      <p>[m
+[32m+[m[32m        <lightning-badge label={product.fields.Material__c.value}></lightning-badge>[m
+[32m+[m[32m        <lightning-badge label={product.fields.Level__c.value}></lightning-badge>[m
+[32m+[m[32m      </p>[m
+[32m+[m[32m      <p>[m
+[32m+[m[32m        <lightning-badge label={product.fields.Category__c.value}></lightning-badge>[m
+[32m+[m[32m      </p>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  </template>[m
+[32m+[m[32m  <template lwc:else>[m
+[32m+[m[32m    <div class="slds-text-heading_medium">Select a bike</div>[m
+[32m+[m[32m  </template>[m
+ </template>[m
+\ No newline at end of file[m
+[1mdiff --git a/force-app/main/default/lwc/bikeCard/bikeCard.js-meta.xml b/force-app/main/default/lwc/bikeCard/bikeCard.js-meta.xml[m
+[1mindex dfcbace..1a2a012 100644[m
+[1m--- a/force-app/main/default/lwc/bikeCard/bikeCard.js-meta.xml[m
+[1m+++ b/force-app/main/default/lwc/bikeCard/bikeCard.js-meta.xml[m
+[36m@@ -7,13 +7,5 @@[m
+     <target>lightning__AppPage</target>[m
+     <target>lightning__RecordPage</target>[m
+     <target>lightning__HomePage</target>[m
+[31m-    <target>lightningCommunity__Page</target>[m
+   </targets>[m
+[31m-  <targetConfigs>[m
+[31m-    <targetConfig targets="lightning__RecordPage">[m
+[31m-      <objects>[m
+[31m-        <object>Product__c</object>[m
+[31m-      </objects>[m
+[31m-    </targetConfig>[m
+[31m-  </targetConfigs>[m
+ </LightningComponentBundle>[m
+\ No newline at end of file[m
