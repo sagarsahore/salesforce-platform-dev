@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,track } from 'lwc';
 
 export default class ChildComponent2 extends LightningElement {
     handleChange(event){
