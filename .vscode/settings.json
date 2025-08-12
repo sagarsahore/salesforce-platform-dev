@@ -4,5 +4,27 @@
     "**/bower_components": true,
     "**/.sfdx": true
   },
-  "salesforcedx-vscode-core.show-cli-success-msg": false
+  "salesforcedx-vscode-core.show-cli-success-msg": false,
+  "editor.semanticTokenColorCustomizations": {
+    "rules": {
+      "class": "#e22727",
+      "enum": "#2F53A8",
+      "interface": "#2F53A8",
+      "type": "#2F53A8",
+      "keyword": "#2F53A8",
+
+      "function": "#E53935",
+      "method": "#E53935",
+      "property": "#E53935",
+      "variable": "#E53935",
+      "parameter": "#E57373",
+
+      "string": "#EFD9D9",
+      "number": "#FF6F6F",
+      "boolean": "#FF6F6F"
+    }
+  }
 }
+
+  
+
