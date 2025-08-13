@@ -9,8 +9,9 @@ public with sharing class retriveAccountList {
         List <Account> accList = [
             SELECT Name FROM Account LIMIT 50
         ];
-        for (Account acc : accList) {
-            System.debug('Account Name: ' + acc.Name);
-        }
+        // to get first 10 Accounts we used Math Min
+         Integer toPrint = Math.min(10, accList.size());
+        for (Integer i = 0; i < toPrint; i++) {
+            System.debug('Account Name: ' + accList[i].Name);
     }
 }
